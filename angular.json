@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-electron-simple-app": {
+    "password-generator": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -84,24 +84,24 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular-electron-simple-app:build"
+            "browserTarget": "password-generator:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "angular-electron-simple-app:build:dev"
+              "browserTarget": "password-generator:build:dev"
             },
             "web": {
-              "browserTarget": "angular-electron-simple-app:build:web"
+              "browserTarget": "password-generator:build:web"
             },
             "production": {
-              "browserTarget": "angular-electron-simple-app:build:production"
+              "browserTarget": "password-generator:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-electron-simple-app:build"
+            "browserTarget": "password-generator:build"
           }
         },
         "test": {
@@ -137,7 +137,7 @@
       }
     }
   },
-  "defaultProject": "angular-electron-simple-app",
+  "defaultProject": "password-generator",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
