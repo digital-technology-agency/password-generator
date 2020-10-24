@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.component';
+import {MakePassword} from './@core/utils';
 
 declare var electron: any;
 declare var fs: any;
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }
         console.debug(this.searchText);
         return this.cards.filter(f => f.name.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
-                || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
+            || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
     }
 
     addItem() {
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
                 title: 'New password info',
                 item: {
                     name: '',
-                    value: '',
+                    value: MakePassword.generate(10),
                     comment: '',
                 },
             },

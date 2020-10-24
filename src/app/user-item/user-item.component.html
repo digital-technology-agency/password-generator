@@ -5,7 +5,7 @@
                 {{item.name}}
             </div>
             <div class="col-2">
-                <input class="btn btn-outline-danger btn-sm" type="button" value="X" (click)="removeClick(item)">
+                <input class="btn btn-outline-danger btn-sm" type="button" value="X" (click)="removeClick(item)" matTooltip="Remove item" matTooltipPosition="above">
             </div>
         </div>
     </div>
@@ -15,10 +15,22 @@
         <div class="col-auto">
             <label class="sr-only" for="pwd">Password</label>
             <div class="input-group mb-2">
-                <div class="input-group-append">
-                    <div class="input-group-text">P</div>
+                <input *ngIf="hidePassword" disabled type="password" class="form-control" placeholder="Password" [value]="item.value" data-toggle="password">
+                <input *ngIf="!hidePassword" disabled type="text" class="form-control" placeholder="Password" [value]="item.value" data-toggle="password">
+                <div class="input-group-append"
+                     matTooltip="Show/Hide password"
+                     matTooltipPosition="above"
+                     (click)="hidePassword = !hidePassword">
+                    <span class="input-group-text">
+                      <i *ngIf="hidePassword" class="fa fa-eye-slash"></i>
+                      <i *ngIf="!hidePassword" class="fa fa-eye"></i>
+                    </span>
                 </div>
-                <input type="password" class="form-control" id="pwd" placeholder="Password" [value]="item.value">
+                <div class="input-group-append" (click)="copy()" matTooltip="Copy to clipboard" matTooltipPosition="above">
+                    <span class="input-group-text">
+                      <i class="fa fa-clipboard"></i>
+                    </span>
+                </div>
             </div>
         </div>
     </div>

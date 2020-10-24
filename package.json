@@ -1,10 +1,10 @@
 {
   "name": "password-generator",
-  "version": "1.0.2",
-  "description": "Angular 10 with Electron (Typescript + SASS + Hot Reload)",
+  "version": "1.0.3",
+  "description": "Password save and copied",
   "author": {
     "email": "admin@digital-technology.agency",
-    "name": "Dmitry kuzovkin",
+    "name": "Kuzovkin Dmitry",
     "url": "https://dta.agency"
   },
   "scripts": {
@@ -42,6 +42,9 @@
   "private": true,
   "dependencies": {
     "@nebular/eva-icons": "^6.2.1",
+    "ngx-toastr": "^13.1.0",
+    "ngx-clipboard": "^14.0.1",
+    "font-awesome": "^4.7.0",
     "@angular/material": "^10.2.5",
     "bootstrap": "^4.5.3",
     "eva-icons": "^1.1.3",

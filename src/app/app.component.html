@@ -8,7 +8,6 @@
         <input *ngIf="(cards.length > 0)" class="btn btn-outline-primary" type="button" value="Save" (click)="save()">
     </form>
     <form class="form-inline">
-        <i class="fas fa-search" aria-hidden="true"></i>
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                (search)="searchText = $event.target.value"
                (keyup)="searchText = $event.target.value">

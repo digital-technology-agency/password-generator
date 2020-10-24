@@ -8,6 +8,9 @@ import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.compo
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {ClipboardModule} from 'ngx-clipboard';
+import {ToastrModule} from 'ngx-toastr';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 declare const electron: any;
 
@@ -25,6 +28,9 @@ declare const electron: any;
         MatDialogModule,
         FormsModule,
         MatInputModule,
+        ClipboardModule,
+        ToastrModule.forRoot(),
+        MatTooltipModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
