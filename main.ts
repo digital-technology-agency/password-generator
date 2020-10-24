@@ -1,5 +1,6 @@
 import {app, BrowserWindow, screen} from 'electron';
 import * as path from 'path';
+import * as fs from 'fs'
 import * as url from 'url';
 
 let win: BrowserWindow = null;

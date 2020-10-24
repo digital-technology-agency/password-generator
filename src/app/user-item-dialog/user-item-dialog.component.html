@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Site</h3>
+    <input type="text" class="form-control" id="name" [(ngModel)]="data.item.name">
+    <h3>Password</h3>
+    <input type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="data.item.value">
+    <h3>Comment</h3>
+    <input type="text" class="form-control" id="comment" [(ngModel)]="data.item.comment">
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="btn btn-success" mat-button [mat-dialog-close]="data.item" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

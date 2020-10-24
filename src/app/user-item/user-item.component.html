@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-10">
+                {{item.name}}
+            </div>
+            <div class="col-2">
+                <input class="btn btn-outline-danger btn-sm" type="button" value="X" (click)="removeClick(item)">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <!--<h4 class="card-title">{{item.name}}</h4>-->
+        <p class="card-text">{{item.comment}}</p>
+        <div class="col-auto">
+            <label class="sr-only" for="pwd">Password</label>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <div class="input-group-text">P</div>
+                </div>
+                <input type="password" class="form-control" id="pwd" placeholder="Password" [value]="item.value">
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+    </div>
+</div>
