@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
     title = 'Password Generator';
     fileExtension = '.pg';
     cards: any[] = [];
+    searchText: any;
 
     constructor(public dialog: MatDialog) {
     }
@@ -22,6 +23,15 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+    }
+
+    get cardItems() {
+        if (!this.searchText) {
+            return this.cards;
+        }
+        console.debug(this.searchText);
+        return this.cards.filter(f => f.name.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
+                || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
     }
 
     addItem() {

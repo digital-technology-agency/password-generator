@@ -1,7 +1,12 @@
 {
   "name": "password-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular 10 with Electron (Typescript + SASS + Hot Reload)",
+  "author": {
+    "email": "admin@digital-technology.agency",
+    "name": "Dmitry kuzovkin",
+    "url": "https://dta.agency"
+  },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "ng": "ng",

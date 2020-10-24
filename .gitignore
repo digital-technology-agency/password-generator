@@ -48,3 +48,4 @@ Thumbs.db
 /main.js.map
 package-lock.json
 /release/
+/userData.pg

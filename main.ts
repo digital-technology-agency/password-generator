@@ -26,6 +26,7 @@ function createWindow(): BrowserWindow {
             enableRemoteModule: true, // true if you want to run 2e2 test  with Spectron or use remote module in renderer context (ie. Angular)
         },
     });
+    win.setMenu(null);
 
     if (serve) {
 
@@ -42,6 +43,7 @@ function createWindow(): BrowserWindow {
             protocol: 'file:',
             slashes: true,
         }));
+        win.setMenu(null);
     }
 
     // Emitted when the window is closed.
