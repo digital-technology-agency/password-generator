@@ -1,11 +1,21 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col-10">
-                {{item.name}}
+            <div class="input-group-append col-2" (click)="openDefaultBrowser()" matTooltip="Open in default browser" matTooltipPosition="above">
+                    <span class="input-group-text">
+                      <i class="fa fa-link"></i>
+                    </span>
+            </div>
+            <div class="col-8">
+                {{item.site}}
             </div>
             <div class="col-2">
-                <input class="btn btn-outline-danger btn-sm" type="button" value="X" (click)="removeClick(item)" matTooltip="Remove item" matTooltipPosition="above">
+                <div class="input-group-append" (click)="removeClick(item)" matTooltip="Remove item" matTooltipPosition="above">
+                    <span class="input-group-text">
+                      <i class="fa fa-trash"></i>
+                    </span>
+                </div>
+                <!--<input class="btn btn-outline-danger btn-sm" type="button" value="X" (click)="" >-->
             </div>
         </div>
     </div>

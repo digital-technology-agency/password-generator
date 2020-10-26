@@ -2,6 +2,8 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {ToastrService} from 'ngx-toastr';
 
+declare var electron: any;
+
 @Component({
     selector: 'app-user-item',
     templateUrl: './user-item.component.html',
@@ -25,8 +27,12 @@ export class UserItemComponent implements OnInit {
         this.deleteClick.emit(item);
     }
 
+    openDefaultBrowser() {
+        electron.shell.openExternal(`http://${this.item.site}`)
+    }
+
     copy() {
         this._clipboardService.copy(this.item.value);
-        this.toastr.success(`Password by ${this.item.name} - copied to clipboard!`, 'Clipboard')
+        this.toastr.success(`Password by ${this.item.site} - copied to clipboard!`, 'Clipboard')
     }
 }

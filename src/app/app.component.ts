@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
             return this.cards;
         }
         console.debug(this.searchText);
-        return this.cards.filter(f => f.name.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
+        return this.cards.filter(f => f.site.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
             || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
     }
 
@@ -40,14 +40,16 @@ export class AppComponent implements OnInit, OnDestroy {
             data: {
                 title: 'New password info',
                 item: {
-                    name: '',
+                    site: '',
                     value: MakePassword.generate(10),
                     comment: '',
                 },
             },
         });
         dialogRef.afterClosed().subscribe(result => {
-            this.cards.push(result);
+            if (result) {
+                this.cards.push(result);
+            }
         });
     }
 
