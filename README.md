@@ -6,6 +6,7 @@
 
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://dta.agency)
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://dta.agency)
+![](https://github.com/digital-technology-agency/password-generator/workflows/Docker%20Image%20CI/badge.svg)
 
 [![Logo](./back-font.png)](http://dta.agency)
 
