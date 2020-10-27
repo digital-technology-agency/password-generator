@@ -1,8 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {ToastrService} from 'ngx-toastr';
-
-declare var electron: any;
+import {ElectronService} from '../@core/electron.service';
 
 @Component({
     selector: 'app-user-item',
@@ -14,13 +13,16 @@ export class UserItemComponent implements OnInit {
     @Input() item;
     @Output() deleteClick = new EventEmitter<any>();
     hidePassword: boolean = true;
+    electron: any;
 
 
     constructor(private _clipboardService: ClipboardService,
-                private toastr: ToastrService) {
+                private toastr: ToastrService,
+                private electronService: ElectronService) {
     }
 
     ngOnInit(): void {
+        this.electron = this.electronService.electron;
     }
 
     removeClick(item: any) {
@@ -28,7 +30,7 @@ export class UserItemComponent implements OnInit {
     }
 
     openDefaultBrowser() {
-        electron.shell.openExternal(`http://${this.item.site}`)
+        this.electron.shell.openExternal(`http://${this.item.site}`)
     }
 
     copy() {

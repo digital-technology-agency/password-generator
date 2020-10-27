@@ -87,6 +87,7 @@
     "electron": "^10.1.4",
     "electron-builder": "22.8.1",
     "electron-reload": "1.5.0",
+    "electron-updater": "^4.3.5",
     "fs": "^0.0.1-security",
     "lforms": "^26.3.1",
     "moment": "^2.29.1",

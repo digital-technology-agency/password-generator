@@ -2,9 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.component';
 import {MakePassword} from './@core/utils';
-
-declare var electron: any;
-declare var fs: any;
+import {ElectronService} from './@core/electron.service';
 
 @Component({
     selector: 'app-root',
@@ -12,15 +10,26 @@ declare var fs: any;
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    title = 'Password Generator';
+    electron: any;
+    fs: any;
+    footerText = 'version: ';
     fileExtension = '.pg';
     cards: any[] = [];
     searchText: any;
 
-    constructor(public dialog: MatDialog) {
+    constructor(public dialog: MatDialog,
+                private electronService: ElectronService) {
     }
 
     ngOnInit() {
+        if (this.electronService.isElectron) {
+            console.log('Run in electron');
+            this.electron = this.electronService.electron;
+            this.fs = this.electronService.fs;
+            this.footerText = `version: ${this.electronService.appVersion}`;
+        } else {
+            console.log('Run in browser');
+        }
     }
 
     ngOnDestroy() {
@@ -33,6 +42,10 @@ export class AppComponent implements OnInit, OnDestroy {
         console.debug(this.searchText);
         return this.cards.filter(f => f.site.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
             || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
+    }
+
+    openActualVersion(){
+        this.electron.shell.openExternal(`https://github.com/digital-technology-agency/password-generator/releases/latest`)
     }
 
     addItem() {
@@ -65,7 +78,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     load() {
-        electron.remote.dialog.showOpenDialog(
+        this.electron.remote.dialog.showOpenDialog(
             {
                 properties: ['openFile'],
                 filters: [
@@ -75,7 +88,7 @@ export class AppComponent implements OnInit, OnDestroy {
             },
         ).then(file => {
             if (!file.canceled) {
-                this.cards = JSON.parse(fs.readFileSync(file.filePaths[0], 'utf8', function (err, data) {
+                this.cards = JSON.parse(this.fs.readFileSync(file.filePaths[0], 'utf8', function (err, data) {
                     if (err) return null;
                     return data;
                 }));
@@ -86,7 +99,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     save() {
-        electron.remote.dialog.showSaveDialog({
+        this.electron.remote.dialog.showSaveDialog({
                 properties: ['createDirectory', 'showOverwriteConfirmation'],
                 filters: [
                     {name: 'User configuration', extensions: ['pg']},
@@ -96,7 +109,7 @@ export class AppComponent implements OnInit, OnDestroy {
             },
         ).then(file => {
             if (!file.canceled) {
-                fs.writeFileSync(file.filePath.toString(), JSON.stringify(this.cards), (err) => {
+                this.fs.writeFileSync(file.filePath.toString(), JSON.stringify(this.cards), (err) => {
                     if (err) {
                         console.debug("An error ocurred creating the file " + err.message);
                     }
