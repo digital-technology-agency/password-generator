@@ -28,8 +28,9 @@
   },
   "mac": {
     "icon": "dist/assets/logo.png",
+    "publish": ["github"],
     "target": [
-      "dmg"
+      "pkg"
     ]
   },
   "linux": {
