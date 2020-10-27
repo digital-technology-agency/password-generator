@@ -25,7 +25,7 @@ jobs:
         with:
           snapcraft_token: ${{ secrets.snapcraft_token }}
 
-      - name: Build/release Linux
+      - name: Linux
         uses: samuelmeuli/action-electron-builder@v1
         if: startsWith(matrix.os, 'ubuntu')
         with:
@@ -33,7 +33,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/') }}
 
-      - name: Build/release Windows
+      - name: Windows
         uses: samuelmeuli/action-electron-builder@v1
         if: startsWith(matrix.os, 'windows')
         with:
@@ -41,7 +41,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/') }}
 
-      - name: Build/release Macos
+      - name: Macos
         uses: samuelmeuli/action-electron-builder@v1
         if: startsWith(matrix.os, 'macos')
         with:

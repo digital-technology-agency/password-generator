@@ -30,7 +30,7 @@
     "icon": "dist/assets/logo.png",
     "publish": ["github"],
     "target": [
-      "pkg"
+      "tar.gz"
     ]
   },
   "linux": {
