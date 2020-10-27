@@ -8,13 +8,11 @@
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://dta.agency)
 [![Actions Status](https://github.com/digital-technology-agency/password-generator/workflows/Build/badge.svg)](https://github.com/digital-technology-agency/password-generator/actions)
 
-[![Logo](./back-font.png)](http://dta.agency)
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
-## Releases
- - [Windows app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator.1.0.4.exe)
- - [Linux app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator-1.0.4.AppImage)
- - [Mac app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator-1.0.4.AppImage)
+### Downloads
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator.1.0.4.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator-1.0.4.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator-1.0.4-mac.tar.gz)
 
 
