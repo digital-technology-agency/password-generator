@@ -13,7 +13,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
 ## Releases
- - [Windows app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.3/password-generator.1.0.3.exe)
- - [Linux app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.3/password-generator-1.0.3.AppImage)
+ - [Windows app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator.1.0.4.exe)
+ - [Linux app](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.4/password-generator-1.0.4.AppImage)
 
 
