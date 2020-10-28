@@ -4,13 +4,13 @@
             <a href="#" class="navbar-brand">
                 <img src="assets/logo.png" width="50" height="50" alt="DTA">
             </a>
-            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Add" (click)="addItem()">
-            <input class="btn btn-outline-primary my-2 my-sm-0" type="button" value="Load" (click)="load()">
-            <input *ngIf="(cards.length > 0)" class="btn btn-outline-primary" type="button" value="Save"
+            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Add' | translate }}" (click)="addItem()">
+            <input class="btn btn-outline-primary my-2 my-sm-0" type="button" value="{{ 'Load' | translate }}" (click)="load()">
+            <input *ngIf="(cards.length > 0)" class="btn btn-outline-primary" type="button" value="{{ 'Save' | translate }}"
                    (click)="save()">
         </form>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            <input class="form-control mr-sm-2" type="search" placeholder="{{ 'Search' | translate }}" aria-label="Search"
                    (search)="searchText = $event.target.value"
                    (keyup)="searchText = $event.target.value">
         </form>
@@ -26,6 +26,12 @@
         </div>
     </div>
     <nav class="navbar navbar-light bg-white fixed-bottom footer">
+        <div class="col-md-auto">
+            <select (change)="languageChange($event.target.value)" class="custom-select">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+            </select>
+        </div>
         <a href="#" (click)="openActualVersion()" matTooltip="Show actual version"
            matTooltipPosition="above">{{footerText}}</a>
     </nav>
