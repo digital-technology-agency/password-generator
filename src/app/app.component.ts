@@ -33,8 +33,11 @@ export class AppComponent implements OnInit, OnDestroy {
             this.electron = this.electronService.electron;
             this.fs = this.electronService.fs;
             this.footerText = `version: ${this.electronService.appVersion}`;
+            const url = this.electronService.electronUpdater.getFeedURL();
+            console.log('Url: ', url, 'autoUpdater: ', this.electronService.electronUpdater);
+            this.electronService.electronUpdater.checkForUpdates();
         } else {
-            console.log('Run in browser');
+            console.log('Browser');
         }
     }
 

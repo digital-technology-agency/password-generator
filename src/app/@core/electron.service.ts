@@ -14,17 +14,16 @@ export class ElectronService {
     remote: typeof remote;
     fs: typeof fs;
     appVersion: any;
-    updateUrl: any;
 
     constructor() {
         if (this.isElectron) {
-            this.ipcRenderer = window.require('electron').ipcRenderer;
             this.electron = window.require('electron');
-            this.webFrame = window.require('electron').webFrame;
+            this.ipcRenderer = this.electron.ipcRenderer;
+            this.webFrame = this.electron.webFrame;
             this.fs = window.require('fs');
-            this.appVersion = window.require('electron').remote.app.getVersion();
-            this.updateUrl = 'https://github.com/digital-technology-agency/password-generator/releases/latest';
-            console.debug('Version: ', this.appVersion);
+            this.appVersion = this.electron.remote.app.getVersion();
+            this.electronUpdater = this.electron.remote.autoUpdater;
+            console.debug('version: ', this.appVersion);
         }
     }
 

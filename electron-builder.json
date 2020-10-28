@@ -34,10 +34,12 @@
     ]
   },
   "linux": {
+    "category": "Utility",
     "icon": "dist/assets/logo.png",
     "publish": ["github"],
     "target": [
-      "AppImage"
+      "AppImage",
+      "deb"
     ]
   }
 }
