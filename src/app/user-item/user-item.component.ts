@@ -37,4 +37,9 @@ export class UserItemComponent implements OnInit {
         this._clipboardService.copy(this.item.value);
         this.toastr.success(`Password by ${this.item.site} - copied to clipboard!`, 'Clipboard')
     }
+
+    copyLogin() {
+        this._clipboardService.copy(this.item.login);
+        this.toastr.success(`Login by ${this.item.site} - copied to clipboard!`, 'Clipboard')
+    }
 }

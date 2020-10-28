@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.component';
 import {MakePassword} from './@core/utils';
 import {ElectronService} from './@core/electron.service';
@@ -44,12 +44,14 @@ export class AppComponent implements OnInit, OnDestroy {
             || f.comment.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1);
     }
 
-    openActualVersion(){
+    openActualVersion() {
         this.electron.shell.openExternal(`https://github.com/digital-technology-agency/password-generator/releases/latest`)
     }
 
     addItem() {
         const dialogRef = this.dialog.open(UserItemDialogComponent, {
+            height: 'auto',
+            width: '40%',
             data: {
                 title: 'New password info',
                 item: {

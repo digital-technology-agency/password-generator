@@ -1,12 +1,41 @@
-<h2 mat-dialog-title>{{data.title}}</h2>
-<mat-dialog-content class="mat-typography">
-    <h3>Site</h3>
-    <input type="text" class="form-control" id="name" [(ngModel)]="data.item.site">
-    <h3>Password</h3>
-    <input type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="data.item.value">
-    <h3>Comment</h3>
-    <input type="text" class="form-control" id="comment" [(ngModel)]="data.item.comment">
-</mat-dialog-content>
+<div mat-dialog-title>{{data.title}}</div>
+<div class="card-body">
+    <mat-dialog-content class="mat-typography">
+        <div class="form-group">
+            <label for="site">Site</label>
+            <input type="text" class="form-control" id="site" [(ngModel)]="data.item.site">
+        </div>
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" id="login" [(ngModel)]="data.item.login">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <div class="input-group mb-2">
+                <input *ngIf="hidePassword" type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="data.item.value">
+                <input *ngIf="!hidePassword" type="text" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="data.item.value" data-toggle="password">
+                <div class="input-group-append"
+                     matTooltip="Show/Hide password"
+                     matTooltipPosition="above"
+                     (click)="hidePassword = !hidePassword">
+                    <span class="input-group-text">
+                      <i *ngIf="hidePassword" class="fa fa-eye-slash"></i>
+                      <i *ngIf="!hidePassword" class="fa fa-eye"></i>
+                    </span>
+                </div>
+                <div class="input-group-append" (click)="generatePassword()" matTooltip="Generate new password" matTooltipPosition="above">
+                    <span class="input-group-text">
+                      <i class="fa fa-refresh"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-control" id="comment" rows="3" [(ngModel)]="data.item.comment"></textarea>
+        </div>
+    </mat-dialog-content>
+</div>
 <mat-dialog-actions align="end">
     <button class="btn btn-success" mat-button [mat-dialog-close]="data.item" cdkFocusInitial>Save</button>
 </mat-dialog-actions>

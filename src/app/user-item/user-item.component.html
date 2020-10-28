@@ -20,8 +20,17 @@
         </div>
     </div>
     <div class="card-body">
-        <!--<h4 class="card-title">{{item.name}}</h4>-->
         <p class="card-text">{{item.comment}}</p>
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <input disabled type="text" class="form-control" [value]="item.login">
+                <div class="input-group-append" (click)="copyLogin()" matTooltip="Copy to clipboard" matTooltipPosition="above">
+                    <span class="input-group-text">
+                      <i class="fa fa-user-o"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
         <div class="col-auto">
             <label class="sr-only" for="pwd">Password</label>
             <div class="input-group mb-2">
