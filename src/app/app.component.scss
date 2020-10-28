@@ -1,9 +1,14 @@
-body {
-  padding-top: 70px;
+.body-wrapper {
+
+}
+
+nav {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .container-fluid {
   padding: 5%;
+  min-height: 100%;
 }
 
 .btn {
@@ -17,9 +22,6 @@ body {
 
 .footer {
   font-size: 12px;
-  position: absolute;
-  top: 96%;
-  padding-right: 10px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
