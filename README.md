@@ -19,9 +19,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Application versions for different operating systems
 * Copying the password to the clipboard by pressing a button
 * Opening a web resource by clicking on a link
+* Localization
 
 
 ### Downloads
-[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.5/password-generator.1.0.5.exe)
-[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.5/password-generator-1.0.5.AppImage)
-[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.5/password-generator-1.0.5-mac.tar.gz)
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.6/password-generator.1.0.6.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.6/password-generator-1.0.6.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.6/password-generator-1.0.6-mac.tar.gz)
