@@ -1,4 +1,5 @@
 {
+  "appId": "dta.password.generator",
   "productName": "password-generator",
   "directories": {
     "output": "release/"
@@ -21,25 +22,54 @@
   ],
   "win": {
     "icon": "dist/assets/logo.png",
-    "publish": ["github"],
+    "publish": [
+      "github"
+    ],
     "target": [
-      "portable"
+      "portable",
+      "nsis"
     ]
   },
   "mac": {
     "icon": "dist/assets/logo.png",
-    "publish": ["github"],
+    "publish": [
+      "github"
+    ],
     "target": [
       "tar.gz"
     ]
   },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true,
+    "artifactName": "${productName}-Installer-${version}.${ext}",
+    "uninstallDisplayName": "${productName}",
+    "deleteAppDataOnUninstall": true
+  },
+  "deb": {
+    "desktop": {
+      "Name": "Password Manager",
+      "Type": "Application",
+      "GenericName": "Password Manager"
+    }
+  },
   "linux": {
-    "category": "Utility",
+    "desktop": {
+      "Name": "Password Manager",
+      "Type": "Application",
+      "GenericName": "Password Manager"
+    },
     "icon": "dist/assets/logo.png",
-    "publish": ["github"],
+    "publish": [
+      "github"
+    ],
     "target": [
       "AppImage",
-      "deb"
+      "deb",
+      "freebsd",
+      "rpm",
+      "snap"
     ]
   }
 }
