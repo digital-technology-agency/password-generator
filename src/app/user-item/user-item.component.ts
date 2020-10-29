@@ -2,6 +2,7 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {ToastrService} from 'ngx-toastr';
 import {ElectronService} from '../@core/electron.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-user-item',
@@ -18,7 +19,8 @@ export class UserItemComponent implements OnInit {
 
     constructor(private _clipboardService: ClipboardService,
                 private toastr: ToastrService,
-                private electronService: ElectronService) {
+                private electronService: ElectronService,
+                private translate: TranslateService) {
     }
 
     ngOnInit(): void {
@@ -35,11 +37,17 @@ export class UserItemComponent implements OnInit {
 
     copy() {
         this._clipboardService.copy(this.item.value);
-        this.toastr.success(`Password by ${this.item.site} - copied to clipboard!`, 'Clipboard')
+        const prefix = this.translate.instant('Password by');
+        const postfix = this.translate.instant('copied to clipboard');
+        const title = this.translate.instant('Clipboard');
+        this.toastr.success(`${prefix} ${this.item.site} - ${postfix}!`, title);
     }
 
     copyLogin() {
         this._clipboardService.copy(this.item.login);
-        this.toastr.success(`Login by ${this.item.site} - copied to clipboard!`, 'Clipboard')
+        const prefix = this.translate.instant('Login by');
+        const postfix = this.translate.instant('copied to clipboard');
+        const title = this.translate.instant('Clipboard');
+        this.toastr.success(`${prefix} ${this.item.login} - ${postfix}!`, title)
     }
 }

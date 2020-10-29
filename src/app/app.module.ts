@@ -11,8 +11,14 @@ import {MatInputModule} from '@angular/material/input';
 import {ClipboardModule} from 'ngx-clipboard';
 import {ToastrModule} from 'ngx-toastr';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient} from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 
-declare const electron: any;
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     declarations: [
@@ -30,11 +36,18 @@ declare const electron: any;
         MatInputModule,
         ClipboardModule,
         ToastrModule.forRoot(),
+        TranslateModule.forRoot(
+            {
+                defaultLanguage: 'en',
+            },
+        ),
         MatTooltipModule,
+        MatSelectModule,
     ],
+    exports: [],
     providers: [],
     bootstrap: [AppComponent],
-    entryComponents: [UserItemDialogComponent]
+    entryComponents: [UserItemDialogComponent],
 })
 export class AppModule {
 }

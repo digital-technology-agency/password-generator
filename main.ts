@@ -1,4 +1,4 @@
-import {app, BrowserWindow, screen} from 'electron';
+import {app, BrowserWindow, screen, autoUpdater} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -7,11 +7,8 @@ const args = process.argv.slice(1),
     serve = args.some(val => val === '--serve');
 
 function createWindow(): BrowserWindow {
-
     const electronScreen = screen;
     const size = electronScreen.getPrimaryDisplay().workAreaSize;
-
-    // Create the browser window.
     win = new BrowserWindow({
         x: 0,
         y: 0,
@@ -21,16 +18,13 @@ function createWindow(): BrowserWindow {
         webPreferences: {
             nodeIntegration: true,
             allowRunningInsecureContent: (serve) ? true : false,
-            contextIsolation: false,  // false if you want to run 2e2 test with Spectron
-            enableRemoteModule: true, // true if you want to run 2e2 test  with Spectron or use remote module in renderer context (ie. Angular)
+            contextIsolation: false,
+            enableRemoteModule: true,
         },
     });
     win.setMenu(null);
-
     if (serve) {
-
         win.webContents.openDevTools();
-
         require('electron-reload')(__dirname, {
             electron: require(`${__dirname}/node_modules/electron`),
         });
@@ -44,24 +38,39 @@ function createWindow(): BrowserWindow {
         }));
         win.setMenu(null);
     }
-
-    // Emitted when the window is closed.
     win.on('closed', () => {
-        // Dereference the window object, usually you would store window
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
         win = null;
     });
-
     return win;
 }
 
+function sendStatusToWindow(text) {
+    win.webContents.send('message', text);
+}
+
 try {
-    // This method will be called when Electron has finished
-    // initialization and is ready to create browser windows.
-    // Some APIs can only be used after this event occurs.
-    // Added 400 ms to fix the black background issue while using transparent window. More detais at https://github.com/electron/electron/issues/15947
-    app.on('ready', () => setTimeout(createWindow, 400));
+    /*    autoUpdater.on('checking-for-update', () => {
+            sendStatusToWindow('Checking for update...');
+        });
+        autoUpdater.on('update-available', (info) => {
+            sendStatusToWindow('Update available.');
+        });
+        autoUpdater.on('update-not-available', (info) => {
+            sendStatusToWindow('Update not available.');
+        });
+        autoUpdater.on('error', (err) => {
+            sendStatusToWindow('Error in auto-updater. ' + err);
+        });
+        autoUpdater.on('update-downloaded', (ev, info) => {
+            sendStatusToWindow('Update downloaded');
+            setTimeout(function() {
+                autoUpdater.quitAndInstall();
+            }, 5000)
+        });*/
+
+    app.on('ready', function () {
+        createWindow();
+    });
 
     // Quit when all windows are closed.
     app.on('window-all-closed', () => {
@@ -79,6 +88,7 @@ try {
             createWindow();
         }
     });
+
 
 } catch (e) {
     // Catch Error
