@@ -1,11 +1,16 @@
 {
   "name": "password-generator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Password save and copied",
+  "homepage": "https://dta.agency",
   "author": {
     "email": "admin@digital-technology.agency",
     "name": "Kuzovkin Dmitry",
     "url": "https://dta.agency"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digital-technology-agency/password-generator"
   },
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
@@ -90,6 +95,8 @@
     "electron": "^10.1.4",
     "electron-builder": "22.8.1",
     "electron-reload": "1.5.0",
+    "qrcode": "^1.4.4",
+    "@types/gapi.auth2": "^0.0.52",
     "fs": "^0.0.1-security",
     "lforms": "^26.3.1",
     "moment": "^2.29.1",
