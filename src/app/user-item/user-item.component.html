@@ -1,7 +1,8 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="input-group-append col-2" (click)="openDefaultBrowser()" matTooltip="Open in default browser"
+            <div class="input-group-append col-2" (click)="openDefaultBrowser()"
+                 matTooltip="{{ 'Open in default browser' | translate }}"
                  matTooltipPosition="above">
                     <span class="input-group-text">
                       <i class="fa fa-link"></i>
@@ -11,7 +12,8 @@
                 {{item.site}}
             </div>
             <div class="col-2">
-                <div class="input-group-append" (click)="removeClick(item)" matTooltip="Remove item"
+                <div class="input-group-append" (click)="removeClick(item)"
+                     matTooltip="{{ 'Remove item' | translate }}"
                      matTooltipPosition="above">
                     <span class="input-group-text">
                       <i class="fa fa-trash"></i>
@@ -26,7 +28,8 @@
         <div class="col-auto">
             <div class="input-group mb-2">
                 <input disabled type="text" class="form-control" [value]="item.login">
-                <div class="input-group-append" (click)="copyLogin()" matTooltip="Copy to clipboard"
+                <div class="input-group-append" (click)="copyLogin()"
+                     matTooltip="{{ 'Copy to clipboard' | translate }}"
                      matTooltipPosition="above">
                     <span class="input-group-text">
                       <i class="fa fa-user-o"></i>
@@ -41,7 +44,7 @@
                 <input *ngIf="!hidePassword" disabled type="text" class="form-control" placeholder="Password"
                        [value]="item.value" data-toggle="password">
                 <div class="input-group-append"
-                     matTooltip="Show/Hide password"
+                     matTooltip="{{ 'Show/Hide password' | translate }}"
                      matTooltipPosition="above"
                      (click)="hidePassword = !hidePassword">
                     <span class="input-group-text">
@@ -49,7 +52,8 @@
                       <i *ngIf="!hidePassword" class="fa fa-eye"></i>
                     </span>
                 </div>
-                <div class="input-group-append" (click)="copy()" matTooltip="Copy to clipboard"
+                <div class="input-group-append" (click)="copy()"
+                     matTooltip="{{ 'Copy to clipboard' | translate }}"
                      matTooltipPosition="above">
                     <span class="input-group-text">
                       <i class="fa fa-clipboard"></i>
