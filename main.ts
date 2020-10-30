@@ -1,14 +1,16 @@
-import {app, BrowserWindow, screen, autoUpdater} from 'electron';
+import {app, BrowserWindow, screen, Tray} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
 let win: BrowserWindow = null;
+let appTray: Tray = null;
 const args = process.argv.slice(1),
     serve = args.some(val => val === '--serve');
 
 function createWindow(): BrowserWindow {
     const electronScreen = screen;
     const size = electronScreen.getPrimaryDisplay().workAreaSize;
+
     win = new BrowserWindow({
         x: 0,
         y: 0,
@@ -29,7 +31,7 @@ function createWindow(): BrowserWindow {
             electron: require(`${__dirname}/node_modules/electron`),
         });
         win.loadURL('http://localhost:4200');
-
+        appTray = new Tray(path.join(__dirname, '/src/assets/logo.png'));
     } else {
         win.loadURL(url.format({
             pathname: path.join(__dirname, 'dist/index.html'),
@@ -37,9 +39,11 @@ function createWindow(): BrowserWindow {
             slashes: true,
         }));
         win.setMenu(null);
+        appTray = new Tray(path.join(__dirname, 'dist/assets/logo.png'));
     }
     win.on('closed', () => {
         win = null;
+        appTray.destroy();
     });
     return win;
 }
@@ -49,25 +53,6 @@ function sendStatusToWindow(text) {
 }
 
 try {
-    /*    autoUpdater.on('checking-for-update', () => {
-            sendStatusToWindow('Checking for update...');
-        });
-        autoUpdater.on('update-available', (info) => {
-            sendStatusToWindow('Update available.');
-        });
-        autoUpdater.on('update-not-available', (info) => {
-            sendStatusToWindow('Update not available.');
-        });
-        autoUpdater.on('error', (err) => {
-            sendStatusToWindow('Error in auto-updater. ' + err);
-        });
-        autoUpdater.on('update-downloaded', (ev, info) => {
-            sendStatusToWindow('Update downloaded');
-            setTimeout(function() {
-                autoUpdater.quitAndInstall();
-            }, 5000)
-        });*/
-
     app.on('ready', function () {
         createWindow();
     });
@@ -88,8 +73,6 @@ try {
             createWindow();
         }
     });
-
-
 } catch (e) {
     // Catch Error
     // throw e;
