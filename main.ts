@@ -31,7 +31,7 @@ function createWindow(): BrowserWindow {
             electron: require(`${__dirname}/node_modules/electron`),
         });
         win.loadURL('http://localhost:4200');
-        appTray = new Tray(path.join(__dirname, '/src/assets/logo.png'));
+        /*appTray = new Tray(`${__dirname}/src/assets/logo.png`)*/
     } else {
         win.loadURL(url.format({
             pathname: path.join(__dirname, 'dist/index.html'),
@@ -39,11 +39,10 @@ function createWindow(): BrowserWindow {
             slashes: true,
         }));
         win.setMenu(null);
-        appTray = new Tray(path.join(__dirname, 'dist/assets/logo.png'));
+        /*appTray = new Tray(path.join(__dirname, 'dist/assets/logo.png'));*/
     }
     win.on('closed', () => {
         win = null;
-        appTray.destroy();
     });
     return win;
 }

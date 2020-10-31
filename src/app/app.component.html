@@ -1,4 +1,41 @@
-<div class="body-wrapper">
+<mat-toolbar class="example-header fixed-top">
+    <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <mat-list>
+            <mat-list-item>
+                <button mat-icon-button class="example-icon" routerLink="/password-cards" (click)="drawer.toggle()">
+                    <mat-icon color="primary">vpn_key</mat-icon>
+                </button>
+                <span>{{ 'Password cards' | translate }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-icon-button class="example-icon" routerLink="/certificates" (click)="drawer.toggle()">
+                    <mat-icon color="primary">card_membership</mat-icon>
+                </button>
+                <span>{{ 'Certificates' | translate }}</span>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+<mat-toolbar class="example-footer fixed-bottom footer">
+    <div class="col-md-auto">
+        <select (change)="languageChange($event.target.value)" class="custom-select">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+        </select>
+    </div>
+    <a href="#" (click)="openActualVersion()" matTooltip="{{ 'Show actual version' | translate }}"
+       matTooltipPosition="above">{{footerText}}</a>
+</mat-toolbar>
+
+<!--<div class="body-wrapper">
     <nav class="navbar navbar-light bg-white fixed-top">
         <form class="form-inline">
             <a href="#" class="navbar-brand">
@@ -11,6 +48,10 @@
             <input *ngIf="(cards.length > 0)" class="btn btn-outline-primary" type="button"
                    value="{{ 'Save' | translate }}"
                    (click)="save()">
+            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Password cards' | translate }}"
+                   routerLink="/password-cards" routerLinkActive="active">
+            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Certificates' | translate }}"
+               routerLink="/certificates" routerLinkActive="active">
         </form>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="{{ 'Search' | translate }}"
@@ -20,23 +61,10 @@
         </form>
     </nav>
     <div class="container-fluid">
-        <div class="row gen-btn">
-            <div class="col-md-auto">
-            </div>
-        </div>
+        <router-outlet></router-outlet>
         <div class="row">
             <app-user-item (deleteClick)="removeItem($event)" [item]="item"
                            *ngFor="let item of cardItems"></app-user-item>
         </div>
     </div>
-    <nav class="navbar navbar-light bg-white fixed-bottom footer">
-        <div class="col-md-auto">
-            <select (change)="languageChange($event.target.value)" class="custom-select">
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-            </select>
-        </div>
-        <a href="#" (click)="openActualVersion()" matTooltip="{{ 'Show actual version' | translate }}"
-           matTooltipPosition="above">{{footerText}}</a>
-    </nav>
-</div>
+</div>-->

@@ -23,8 +23,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Popular installers
 * Tray app
 
+## Create certificate RSA
+![Windows app](./pic/create-certificate.png)
 
-### Downloads
-[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.8/password-generator.1.0.8.exe)
-[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.8/password-generator-1.0.8.AppImage)
-[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.8/password-generator-1.0.8-mac.tar.gz)
+
+## Downloads
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-installer-1.0.9.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-1.0.9.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-1.0.9-mac.tar.gz)

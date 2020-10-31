@@ -1,0 +1,11 @@
+<div mat-dialog-title>{{data.title | translate }}</div>
+<div class="row">
+    <mat-form-field class="col-md-6" appearance="fill">
+        <mat-label>Public</mat-label>
+        <textarea rows="10" matInput [value]="certPublicInfo"></textarea>
+    </mat-form-field>
+    <mat-form-field class="col-md-6" appearance="fill">
+        <mat-label>Private</mat-label>
+        <textarea rows="10" matInput [value]="certPrivateInfo"></textarea>
+    </mat-form-field>
+</div>
