@@ -2,19 +2,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/buttons";
 @import "~font-awesome/scss/font-awesome";
-@import '~@angular/material/theming';
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~ngx-toastr/toastr';
-
+@import "src/app/@thems/custom";
 
 body, html {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.41), rgba(0, 0, 0, 0.72)), url("~assets/setka.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 body::-webkit-scrollbar {

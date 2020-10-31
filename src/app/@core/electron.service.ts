@@ -8,6 +8,9 @@ import * as fs from 'fs';
 export class ElectronService {
 
     electron: typeof Electron;
+    crypto: any;
+    electronTray: any;
+    electronNotification: any;
     electronUpdater: any;
     ipcRenderer: typeof ipcRenderer;
     webFrame: typeof webFrame;
@@ -18,12 +21,20 @@ export class ElectronService {
     constructor() {
         if (this.isElectron) {
             this.electron = window.require('electron');
+            this.crypto = window.require('crypto');
             this.ipcRenderer = this.electron.ipcRenderer;
             this.webFrame = this.electron.webFrame;
             this.fs = window.require('fs');
             this.appVersion = this.electron.remote.app.getVersion();
             this.electronUpdater = this.electron.remote.autoUpdater;
             console.debug('version: ', this.appVersion);
+            console.debug('crypto: ', this.crypto);
+            this.electronNotification = new this.electron.remote.Notification({
+                title: 'Title',
+                body: 'Notification from the Renderer process'
+            });
+            console.debug('tray: ', this.electronTray);
+            console.debug('notification: ', this.electronNotification);
         }
     }
 
