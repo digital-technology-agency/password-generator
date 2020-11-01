@@ -10,6 +10,11 @@ import {MakePassword} from '../../../@core/utils';
 export class UserItemDialogComponent implements OnInit {
 
     hidePassword: boolean = true;
+    options: any = {
+        length: 10,
+        digits: false,
+        special: false,
+    };
 
     constructor(
         public dialogRef: MatDialogRef<UserItemDialogComponent>,
@@ -20,7 +25,8 @@ export class UserItemDialogComponent implements OnInit {
     }
 
     generatePassword() {
-        this.data.item.value = MakePassword.generate(10);
+        console.debug('length: ', this.options);
+        this.data.item.value = MakePassword.generateWithOptions(this.options);
     }
 
 }

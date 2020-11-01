@@ -30,6 +30,8 @@ import {NewRsaCertComponent} from './dialogs/certs/new-rsa-cert/new-rsa-cert.com
 import {MatSelectModule} from '@angular/material/select';
 import { CertificateItemComponent } from './certificates/certificate-item/certificate-item.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -50,6 +52,10 @@ const MATERIAL_MODULES = [
     MatListModule,
     MatMenuModule,
     MatTooltipModule,
+    MatSelectModule,
+    MatCardModule,
+    MatSliderModule,
+    MatCheckboxModule,
 ];
 
 @NgModule({
@@ -78,8 +84,7 @@ const MATERIAL_MODULES = [
         PortalModule,
         ScrollingModule,
         ...MATERIAL_MODULES,
-        MatSelectModule,
-        MatCardModule,
+
     ],
     exports: [],
     providers: [],

@@ -34,37 +34,3 @@
     <a href="#" (click)="openActualVersion()" matTooltip="{{ 'Show actual version' | translate }}"
        matTooltipPosition="above">{{footerText}}</a>
 </mat-toolbar>
-
-<!--<div class="body-wrapper">
-    <nav class="navbar navbar-light bg-white fixed-top">
-        <form class="form-inline">
-            <a href="#" class="navbar-brand">
-                <img src="assets/logo.png" width="50" height="50" alt="DTA">
-            </a>
-            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Add' | translate }}"
-                   (click)="addItem()">
-            <input class="btn btn-outline-primary my-2 my-sm-0" type="button" value="{{ 'Load' | translate }}"
-                   (click)="load()">
-            <input *ngIf="(cards.length > 0)" class="btn btn-outline-primary" type="button"
-                   value="{{ 'Save' | translate }}"
-                   (click)="save()">
-            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Password cards' | translate }}"
-                   routerLink="/password-cards" routerLinkActive="active">
-            <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="{{ 'Certificates' | translate }}"
-               routerLink="/certificates" routerLinkActive="active">
-        </form>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="{{ 'Search' | translate }}"
-                   aria-label="Search"
-                   (search)="searchText = $event.target.value"
-                   (keyup)="searchText = $event.target.value">
-        </form>
-    </nav>
-    <div class="container-fluid">
-        <router-outlet></router-outlet>
-        <div class="row">
-            <app-user-item (deleteClick)="removeItem($event)" [item]="item"
-                           *ngFor="let item of cardItems"></app-user-item>
-        </div>
-    </div>
-</div>-->

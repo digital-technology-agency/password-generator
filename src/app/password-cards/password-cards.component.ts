@@ -47,7 +47,11 @@ export class PasswordCardsComponent implements OnInit {
                 title: 'New password info',
                 item: {
                     site: '',
-                    value: MakePassword.generate(10),
+                    value: MakePassword.generateWithOptions({
+                        length: 10,
+                        digits: false,
+                        special: false,
+                    }),
                     comment: '',
                 },
             },
