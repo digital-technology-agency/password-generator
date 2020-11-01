@@ -2,9 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {UserItemComponent} from './user-item/user-item.component';
+import {UserItemComponent} from './password-cards/user-item/user-item.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
-import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.component';
+import {UserItemDialogComponent} from './dialogs/users/user-item-dialog/user-item-dialog.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -28,6 +28,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NewRsaCertComponent} from './dialogs/certs/new-rsa-cert/new-rsa-cert.component';
 import {MatSelectModule} from '@angular/material/select';
+import { CertificateItemComponent } from './certificates/certificate-item/certificate-item.component';
+import {MatCardModule} from '@angular/material/card';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -57,6 +59,7 @@ const MATERIAL_MODULES = [
         UserItemComponent,
         CertificatesComponent,
         PasswordCardsComponent,
+        CertificateItemComponent,
     ],
     imports: [
         BrowserModule,
@@ -76,6 +79,7 @@ const MATERIAL_MODULES = [
         ScrollingModule,
         ...MATERIAL_MODULES,
         MatSelectModule,
+        MatCardModule,
     ],
     exports: [],
     providers: [],

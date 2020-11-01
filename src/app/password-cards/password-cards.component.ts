@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ElectronService} from '../@core/electron.service';
-import {UserItemDialogComponent} from '../user-item-dialog/user-item-dialog.component';
+import {UserItemDialogComponent} from '../dialogs/users/user-item-dialog/user-item-dialog.component';
 import {MakePassword} from '../@core/utils';
 
 @Component({
@@ -91,7 +91,7 @@ export class PasswordCardsComponent implements OnInit {
         this.electron.remote.dialog.showSaveDialog({
                 properties: ['createDirectory', 'showOverwriteConfirmation'],
                 filters: [
-                    {name: 'User configuration', extensions: ['pg']},
+                    {name: 'User configuration', extensions: [this.fileExtension]},
                     {name: 'All Files', extensions: ['*']},
                 ],
                 defaultPath: `userData${this.fileExtension}`,

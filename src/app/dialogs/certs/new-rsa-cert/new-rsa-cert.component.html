@@ -1,11 +1,21 @@
 <div mat-dialog-title>{{data.title | translate }}</div>
 <div class="row">
     <mat-form-field class="col-md-6" appearance="fill">
-        <mat-label>Public</mat-label>
-        <textarea rows="10" matInput [value]="certPublicInfo"></textarea>
-    </mat-form-field>
-    <mat-form-field class="col-md-6" appearance="fill">
-        <mat-label>Private</mat-label>
-        <textarea rows="10" matInput [value]="certPrivateInfo"></textarea>
+        <mat-label>{{ 'Resource' | translate }}</mat-label>
+        <input type="text" matInput [(ngModel)]="data.item.site">
     </mat-form-field>
 </div>
+<div class="row">
+    <mat-form-field class="col-md-6" appearance="fill">
+        <mat-label>{{ 'Public key' | translate }}</mat-label>
+        <textarea style="font-size: 12px;" rows="10" matInput [value]="certPublicInfo"></textarea>
+    </mat-form-field>
+    <mat-form-field class="col-md-6" appearance="fill">
+        <mat-label>{{ 'Private key' | translate }}</mat-label>
+        <textarea style="font-size: 12px;" rows="10" matInput [value]="certPrivateInfo"></textarea>
+    </mat-form-field>
+</div>
+<mat-dialog-actions align="end">
+    <button class="btn-success" mat-button [mat-dialog-close]="data.item"
+            cdkFocusInitial>{{ 'Save' | translate }}</button>
+</mat-dialog-actions>

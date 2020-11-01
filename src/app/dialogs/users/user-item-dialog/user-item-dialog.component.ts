@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {MakePassword} from '../@core/utils';
+import {MakePassword} from '../../../@core/utils';
 
 @Component({
     selector: 'app-user-item-dialog',

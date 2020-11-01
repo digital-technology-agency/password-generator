@@ -18,11 +18,14 @@ export class Local {
             Load: 'Load',
             Save: 'Save',
             Certificates: 'Certificates',
+            'Public key': 'Public key',
+            'Private key': 'Private key',
             'Create certificate': 'Create certificate',
             'Password cards': 'Password cards',
             Comment: 'Comment',
             Login: 'Login',
             Site: 'Site',
+            Resource: 'Resource',
         }
     }
 
@@ -45,11 +48,14 @@ export class Local {
             Load: 'Загрузить',
             Save: 'Сохранить',
             Certificates: 'Сертификаты',
+            'Public key': 'Публичный ключ',
+            'Private key': 'Приватный ключ',
             'Create certificate': 'Создать сертификат',
             'Password cards': 'Карточки ресурсов',
             Comment: 'Коментарий',
             Login: 'Логин',
             Site: 'Сайт',
+            Resource: 'Ресурс',
         }
     }
 }

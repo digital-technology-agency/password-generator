@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {UserItemDialogComponent} from './user-item-dialog/user-item-dialog.component';
+import {UserItemDialogComponent} from './dialogs/users/user-item-dialog/user-item-dialog.component';
 import {MakePassword} from './@core/utils';
 import {ElectronService} from './@core/electron.service';
 import {TranslateService} from '@ngx-translate/core';
