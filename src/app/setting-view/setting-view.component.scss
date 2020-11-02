@@ -2,8 +2,24 @@
   flex: 1 1 auto;
 }
 
-.form-data {
+mat-card-content {
+  .mat-radio-button {
+    margin-left: 16px;
+    ~ .mat-radio-button {
+      margin-left: 16px;
+    }
+  }
+
+  .row {
+    flex: 1 1 auto;
+    margin: 20px;
+  }
+
   padding: 10px;
-  height: 100%;
+  height: 110%;
   background-color: white;
+  display: block;
 }
+
+
+

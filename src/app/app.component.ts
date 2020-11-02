@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ElectronService} from './@core/services/electron.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Local} from './@core/local/locals';
+import {SettingsService} from './@core/services/settings.service';
 
 @Component({
     selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit, OnDestroy {
     footerText = 'version: ';
 
     constructor(private electronService: ElectronService,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private settingsService: SettingsService) {
         translate.setTranslation('en', Local.en());
         translate.setTranslation('ru', Local.ru());
         translate.setDefaultLang('en');
@@ -28,7 +30,6 @@ export class AppComponent implements OnInit, OnDestroy {
             this.footerText = `version: ${this.electronService.appVersion}`;
             const url = this.electronService.electronUpdater.getFeedURL();
             console.log('Url: ', url, 'autoUpdater: ', this.electronService.electronUpdater);
-            this.electronService.electronUpdater.checkForUpdates();
         } else {
             console.log('Browser');
         }

@@ -5,12 +5,15 @@
 [![Electron Logo](https://www.vectorlogo.zone/logos/electronjs/electronjs-icon.svg)](https://electronjs.org/)
 
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://dta.agency)
-[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://dta.agency)
 [![Actions Status](https://github.com/digital-technology-agency/password-generator/workflows/Build/badge.svg)](https://github.com/digital-technology-agency/password-generator/actions)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/digital-technology-agency/password-generator)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
 ### Facilities
+![GitHub closed issues](https://img.shields.io/github/issues/digital-technology-agency/password-generator?style=flat)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/digital-technology-agency/password-generator?style=flat)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/digital-technology-agency/password-generator)
 
 ## Create a card with password and resource information
 ![Windows app](./pic/create-card-information.png)
@@ -23,6 +26,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Opening a web resource by clicking on a link
 * Popular installers
 * Tray app
+## Options view 
+![Windows app](./pic/setting-view.png)
+
+## 2FA 
+![2FA example](./pic/2fa.png)
 
 ## Localization
 ![Windows app](./pic/localization.png)
@@ -33,6 +41,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Downloads
-[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-installer-1.0.10.exe)
-[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-1.0.10.AppImage)
-[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-1.0.10-mac.tar.gz)
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.11/password-generator-installer-1.0.11.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.11/password-generator-1.0.11.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.11/password-generator-1.0.11-mac.tar.gz)

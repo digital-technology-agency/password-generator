@@ -10,8 +10,9 @@ export class SettingsService {
     settingFile = 'manager.set';
     settings: any = {
         secret32: null,
+        twoFactor: false,
+        saveInterval: 10000,
     };
-
 
     constructor(private electronService: ElectronService) {
         this.fs = this.electronService.fs;

@@ -35,6 +35,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {AuthenticatorComponent} from './authenticator/authenticator.component';
 import {GoogleSettingsComponent} from './dialogs/autenticator/google-settings/google-settings.component';
 import { SettingViewComponent } from './setting-view/setting-view.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -59,6 +60,7 @@ const MATERIAL_MODULES = [
     MatCardModule,
     MatSliderModule,
     MatCheckboxModule,
+    MatRadioModule,
 ];
 
 @NgModule({
@@ -89,6 +91,7 @@ const MATERIAL_MODULES = [
         PortalModule,
         ScrollingModule,
         ...MATERIAL_MODULES,
+
 
     ],
     exports: [],
