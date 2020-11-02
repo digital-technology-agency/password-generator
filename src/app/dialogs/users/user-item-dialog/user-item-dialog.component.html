@@ -26,10 +26,10 @@
         </div>
         <div class="row checkers">
             <mat-checkbox [(ngModel)]="options.digits"
-                          (change)="generatePassword()">Digits
+                          (change)="generatePassword()">{{ 'Digits' | translate }}
             </mat-checkbox>
             <mat-checkbox [(ngModel)]="options.special"
-                          (change)="generatePassword()">Special
+                          (change)="generatePassword()">{{ 'Special' | translate }}
             </mat-checkbox>
         </div>
         <div class="row">
