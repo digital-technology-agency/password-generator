@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {ElectronService} from '../../../@core/electron.service';
+import {ElectronService} from '../../../@core/services/electron.service';
 import QRCode from 'qrcode'
 
 @Component({

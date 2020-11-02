@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {CertificatesComponent} from './certificates/certificates.component';
 import {PasswordCardsComponent} from './password-cards/password-cards.component';
 import {AuthenticatorComponent} from './authenticator/authenticator.component';
+import {SettingViewComponent} from './setting-view/setting-view.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'authenticator',
         component: AuthenticatorComponent,
+    },
+    {
+        path: 'settings',
+        component: SettingViewComponent,
     },
 ];
 

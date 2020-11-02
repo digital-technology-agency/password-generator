@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {ElectronService} from '../@core/electron.service';
 import {GoogleSettingsComponent} from '../dialogs/autenticator/google-settings/google-settings.component';
+import {Auth2faService} from '../@core/services/auth-2fa-service';
 
 @Component({
     selector: 'app-authenticator',
@@ -10,18 +10,13 @@ import {GoogleSettingsComponent} from '../dialogs/autenticator/google-settings/g
 })
 export class AuthenticatorComponent implements OnInit {
 
-    fs: any;
-    setting2FaFile = '2fa.setting';
-    speakeasy: any;
     verifedNumber: any;
 
     constructor(public dialog: MatDialog,
-                private electronService: ElectronService) {
+                private auth2Fa: Auth2faService) {
     }
 
     ngOnInit(): void {
-        this.speakeasy = this.electronService.speake;
-        this.fs = this.electronService.fs;
     }
 
     initSettings() {
@@ -29,47 +24,16 @@ export class AuthenticatorComponent implements OnInit {
             height: 'auto',
             width: '300px',
             data: {
-                item: this.settingHistory,
-                title: '2FA Google Settings',
+                item: this.auth2Fa.secret,
+                title: '2FA Settings',
             },
         });
         dialogRef.afterClosed().subscribe(result => {
-            if (result) {
-                console.debug(result);
-                this.fs.writeFileSync(this.setting2FaFile, JSON.stringify(result), (err) => {
-                    if (err) {
-                        console.debug("An error ocurred creating the file " + err.message);
-                    }
-                    console.debug("The file has been succesfully saved");
-                });
-            }
+            this.auth2Fa.saveSettings(result);
         });
-    }
-
-    get settingHistory() {
-        if (!this.exist2fa) {
-            return {secret32: null};
-        }
-        const readFileSync = this.fs.readFileSync(this.setting2FaFile, 'utf8', function (err, data) {
-            if (err) return undefined;
-            return data;
-        });
-        return JSON.parse(readFileSync === null ? {secret32: null} : readFileSync);
-    }
-
-    get exist2fa() {
-        return this.fs.existsSync(this.setting2FaFile)
     }
 
     get verifed() {
-        const readFileSync = this.fs.readFileSync(this.setting2FaFile, 'utf8', function (err, data) {
-            if (err) return undefined;
-            return data;
-        });
-        return this.speakeasy.totp.verify({
-            secret: JSON.parse(readFileSync).secret32,
-            encoding: 'base32',
-            token: `${this.verifedNumber}`,
-        });
+        return this.auth2Fa.verifed(this.verifedNumber);
     }
 }

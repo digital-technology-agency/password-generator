@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {ElectronService} from '../@core/electron.service';
+import {ElectronService} from '../@core/services/electron.service';
 import {UserItemDialogComponent} from '../dialogs/users/user-item-dialog/user-item-dialog.component';
 import {MakePassword} from '../@core/utils';
 

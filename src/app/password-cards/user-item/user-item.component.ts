@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ClipboardService} from 'ngx-clipboard';
 import {ToastrService} from 'ngx-toastr';
-import {ElectronService} from '../../@core/electron.service';
+import {ElectronService} from '../../@core/services/electron.service';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({

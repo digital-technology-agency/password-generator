@@ -34,6 +34,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {AuthenticatorComponent} from './authenticator/authenticator.component';
 import {GoogleSettingsComponent} from './dialogs/autenticator/google-settings/google-settings.component';
+import { SettingViewComponent } from './setting-view/setting-view.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -69,6 +70,7 @@ const MATERIAL_MODULES = [
         PasswordCardsComponent,
         CertificateItemComponent,
         AuthenticatorComponent,
+        SettingViewComponent,
     ],
     imports: [
         BrowserModule,

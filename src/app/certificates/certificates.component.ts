@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {NewRsaCertComponent} from '../dialogs/certs/new-rsa-cert/new-rsa-cert.component';
-import {ElectronService} from '../@core/electron.service';
+import {ElectronService} from '../@core/services/electron.service';
 
 @Component({
     selector: 'app-certificates',

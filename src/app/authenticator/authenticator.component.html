@@ -1,9 +1,9 @@
 <mat-toolbar class="example-header">
     <span class="example-spacer"></span>
-    <button *ngIf="!exist2fa" mat-icon-button class="example-icon" (click)="initSettings()">
+    <button mat-icon-button class="example-icon" (click)="initSettings()">
         <mat-icon color="primary">settings_cell</mat-icon>
     </button>
-    <span *ngIf="!exist2fa">{{ 'Create 2FA' | translate }}</span>
+    <span>{{ 'Create 2FA' | translate }}</span>
 </mat-toolbar>
 <mat-card *ngIf="exist2fa">
     <mat-card-header>Validate 2FA</mat-card-header>

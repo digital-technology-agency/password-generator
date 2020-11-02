@@ -1,0 +1,17 @@
+<mat-toolbar class="example-header">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" (click)="saveData()">
+        <mat-icon color="primary">save</mat-icon>
+    </button>
+    <span>{{ 'Save' | translate }}</span>
+</mat-toolbar>
+<div class="row form-data">
+    <mat-form-field *ngIf="settings.secret32" class="col-md-12" appearance="outline">
+        <mat-label>{{ '2FA secret' | translate }}</mat-label>
+        <input type="text" matInput [(ngModel)]="settings.secret32">
+    </mat-form-field>
+    <button *ngIf="!settings.secret32" mat-icon-button class="example-icon" (click)="initSettings()">
+        <mat-icon color="primary">settings_cell</mat-icon>
+    </button>
+    <span *ngIf="!settings.secret32">{{ 'Create 2FA' | translate }}</span>
+</div>
