@@ -18,6 +18,12 @@
                 </button>
                 <span>{{ 'Certificates' | translate }}</span>
             </mat-list-item>
+            <mat-list-item>
+                <button mat-icon-button class="example-icon" routerLink="/authenticator" (click)="drawer.toggle()">
+                    <mat-icon color="primary">lock_open</mat-icon>
+                </button>
+                <span>{{ '2FA' | translate }}</span>
+            </mat-list-item>
         </mat-list>
     </mat-drawer>
     <div class="example-sidenav-content">

@@ -1,0 +1,14 @@
+<div mat-dialog-title>{{data.title | translate }}</div>
+<div class="row col-md-12">
+    <img width="200" height="200" [src]="qrCodeImage"/>
+</div>
+<mat-form-field class="col-md-12" appearance="fill">
+    <mat-label>{{ 'Token' | translate }}</mat-label>
+    <input style="font-size: 16px;" matInput [(ngModel)]="verifedNumber">
+    <mat-hint>verifed ({{verifed}})</mat-hint>
+</mat-form-field>
+
+<mat-dialog-actions align="end">
+    <button [disabled]="!verifed" class="btn-success" mat-button [mat-dialog-close]="data.item"
+            cdkFocusInitial>{{ 'Save' | translate }}</button>
+</mat-dialog-actions>

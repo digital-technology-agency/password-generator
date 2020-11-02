@@ -28,17 +28,19 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {NewRsaCertComponent} from './dialogs/certs/new-rsa-cert/new-rsa-cert.component';
 import {MatSelectModule} from '@angular/material/select';
-import { CertificateItemComponent } from './certificates/certificate-item/certificate-item.component';
+import {CertificateItemComponent} from './certificates/certificate-item/certificate-item.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {AuthenticatorComponent} from './authenticator/authenticator.component';
+import {GoogleSettingsComponent} from './dialogs/autenticator/google-settings/google-settings.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
 
 const ENTRY_COMPONENTS = [
-    UserItemDialogComponent, NewRsaCertComponent,
+    UserItemDialogComponent, NewRsaCertComponent, GoogleSettingsComponent,
 ];
 
 const MATERIAL_MODULES = [
@@ -66,6 +68,7 @@ const MATERIAL_MODULES = [
         CertificatesComponent,
         PasswordCardsComponent,
         CertificateItemComponent,
+        AuthenticatorComponent,
     ],
     imports: [
         BrowserModule,

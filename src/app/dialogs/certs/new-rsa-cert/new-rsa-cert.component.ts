@@ -8,12 +8,6 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 })
 export class NewRsaCertComponent implements OnInit {
 
-    types: ['pkcs1', 'spki', 'pkcs8', 'sec1'];
-
-    currentType: any;
-    currentFormat: any;
-
-
     constructor(
         public dialogRef: MatDialogRef<NewRsaCertComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any) {
