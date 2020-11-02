@@ -12,22 +12,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Facilities
 
-* Create a card with password and resource information
+## Create a card with password and resource information
+![Windows app](./pic/create-card-information.png)
+
 * Saving a set of cards to a file
 * Loading a set of cards from a file
 * Contextual search in a set of cards
 * Application versions for different operating systems
 * Copying the password to the clipboard by pressing a button
 * Opening a web resource by clicking on a link
-* Localization
 * Popular installers
 * Tray app
 
+## Localization
+![Windows app](./pic/localization.png)
+
 ## Create certificate RSA
 ![Windows app](./pic/create-certificate.png)
+![Windows app](./pic/rsa-list.png)
 
 
 ## Downloads
-[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-installer-1.0.9.exe)
-[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-1.0.9.AppImage)
-[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.9/password-generator-1.0.9-mac.tar.gz)
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-installer-1.0.10.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-1.0.10.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.10/password-generator-1.0.10-mac.tar.gz)

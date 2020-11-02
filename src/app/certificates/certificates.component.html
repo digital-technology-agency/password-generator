@@ -4,4 +4,13 @@
         <mat-icon color="primary">note_add</mat-icon>
     </button>
     <span>{{ 'Create certificate' | translate }}</span>
+    <button *ngIf="certificates.length > 0" mat-icon-button class="example-icon" (click)="save()">
+        <mat-icon color="primary">save</mat-icon>
+    </button>
+    <span *ngIf="certificates.length > 0">{{ 'Save' | translate }}</span>
 </mat-toolbar>
+<div class="container-fluid">
+    <div class="row">
+        <app-certificate-item [item]="item" *ngFor="let item of cardCertificates"></app-certificate-item>
+    </div>
+</div>

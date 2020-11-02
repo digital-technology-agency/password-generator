@@ -1,0 +1,63 @@
+<div mat-dialog-title>{{data.title | translate }}</div>
+<div class="card-body">
+    <mat-dialog-content class="mat-typography">
+        <div class="row">
+            <mat-form-field class="col-md-12" appearance="outline">
+                <mat-label>{{ 'Site' | translate }}</mat-label>
+                <input matInput type="text" [(ngModel)]="data.item.site">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-12" appearance="outline">
+                <mat-label>{{ 'Login' | translate }}</mat-label>
+                <input matInput type="text" [(ngModel)]="data.item.login">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-label style="font-size: 12px; margin-left: 20px;">{{ 'Password length' | translate }}</mat-label>
+            <mat-slider
+                    class="col-md-8"
+                    thumbLabel
+                    [max]="100"
+                    [min]="10"
+                    [(value)]="options.length"
+                    (valueChange)="generatePassword()">
+            </mat-slider>
+        </div>
+        <div class="row checkers">
+            <mat-checkbox [(ngModel)]="options.digits"
+                          (change)="generatePassword()">{{ 'Digits' | translate }}
+            </mat-checkbox>
+            <mat-checkbox [(ngModel)]="options.special"
+                          (change)="generatePassword()">{{ 'Special' | translate }}
+            </mat-checkbox>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-12" appearance="outline">
+                <mat-label>{{ 'Password' | translate }} ({{options.length}})</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="data.item.value">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                        matTooltip="{{ 'Show/Hide password' | translate }}"
+                        matTooltipPosition="above"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <!--                <button mat-icon-button class="example-icon" (click)="generatePassword()"
+                                        matTooltip="{{ 'Generate new password' | translate }}"
+                                        matTooltipPosition="above">
+                                    <mat-icon>refresh</mat-icon>
+                                </button>-->
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-md-12" appearance="outline">
+                <mat-label>{{ 'Comment' | translate }}</mat-label>
+                <textarea matInput rows="3" [(ngModel)]="data.item.comment"></textarea>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+</div>
+<mat-dialog-actions align="end">
+    <button class="btn btn-success" mat-button [mat-dialog-close]="data.item"
+            cdkFocusInitial>{{ 'Save' | translate }}</button>
+</mat-dialog-actions>
