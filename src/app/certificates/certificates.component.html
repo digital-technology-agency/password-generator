@@ -1,16 +1,20 @@
-<mat-toolbar class="example-header">
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" (click)="createRsa()">
-        <mat-icon color="primary">note_add</mat-icon>
-    </button>
-    <span>{{ 'Create certificate' | translate }}</span>
-    <button *ngIf="certificates.length > 0" mat-icon-button class="example-icon" (click)="save()">
-        <mat-icon color="primary">save</mat-icon>
-    </button>
-    <span *ngIf="certificates.length > 0">{{ 'Save' | translate }}</span>
-</mat-toolbar>
-<div class="container-fluid">
-    <div class="row">
-        <app-certificate-item [item]="item" *ngFor="let item of cardCertificates"></app-certificate-item>
-    </div>
-</div>
+<app-simple>
+    <app-menu>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" (click)="createRsa()">
+            <mat-icon color="primary">note_add</mat-icon>
+        </button>
+        <span>{{ 'Create certificate' | translate }}</span>
+        <button *ngIf="certificates.length > 0" mat-icon-button class="example-icon" (click)="save()">
+            <mat-icon color="primary">save</mat-icon>
+        </button>
+        <span *ngIf="certificates.length > 0">{{ 'Save' | translate }}</span>
+    </app-menu>
+    <app-content-view>
+        <div class="container-fluid">
+            <div class="row">
+                <app-certificate-item [item]="item" *ngFor="let item of cardCertificates"></app-certificate-item>
+            </div>
+        </div>
+    </app-content-view>
+</app-simple>

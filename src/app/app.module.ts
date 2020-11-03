@@ -35,6 +35,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {GoogleSettingsComponent} from './dialogs/autenticator/google-settings/google-settings.component';
 import { SettingViewComponent } from './setting-view/setting-view.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {ThemeModule} from './@themes/theme.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -89,8 +90,7 @@ const MATERIAL_MODULES = [
         PortalModule,
         ScrollingModule,
         ...MATERIAL_MODULES,
-
-
+        ThemeModule,
     ],
     exports: [],
     providers: [],

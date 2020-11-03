@@ -1,0 +1,16 @@
+<mat-toolbar class="example-footer fixed-bottom footer">
+    <button mat-icon-button class="example-icon" (click)="feedBack()"
+            matTooltip="{{ 'Write to developer' | translate }}"
+            matTooltipPosition="above">
+        <mat-icon color="primary">mail</mat-icon>
+    </button>
+    <span>{{ 'Feedback' | translate }}</span>
+    <div class="col-md-auto">
+        <select (change)="languageChange($event.target.value)" class="custom-select">
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+        </select>
+    </div>
+    <a href="#" (click)="openActualVersion()" matTooltip="{{ 'Show actual version' | translate }}"
+       matTooltipPosition="above">{{footerText}}</a>
+</mat-toolbar>

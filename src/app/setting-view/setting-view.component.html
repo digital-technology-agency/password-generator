@@ -1,35 +1,40 @@
-<mat-toolbar class="example-header">
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" (click)="saveData()">
-        <mat-icon color="primary">save</mat-icon>
-    </button>
-    <span>{{ 'Save' | translate }}</span>
-</mat-toolbar>
-<mat-card class="col-md-12">
-    <mat-card-content>
-        <div class="row">
-            <mat-checkbox [(ngModel)]="settings.autosave">{{ 'Auto save' | translate }}</mat-checkbox>
-            <mat-radio-group *ngIf="settings.autosave" aria-label="Select an option"
-                             [(ngModel)]="settings.saveInterval">
-                <mat-radio-button value="5000">5 sec</mat-radio-button>
-                <mat-radio-button value="10000">10 sec</mat-radio-button>
-                <mat-radio-button value="30000">30 sec</mat-radio-button>
-                <mat-radio-button value="60000">1 min</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <mat-form-field class="row" *ngIf="!settings.secret32">
-            <button mat-icon-button (click)="initSettings()">
-                <mat-icon color="primary">settings_cell</mat-icon>
-            </button>
-            <input type="text" matInput hidden>
-            <span>{{ 'Create 2FA' | translate }}</span>
-        </mat-form-field>
-        <mat-form-field *ngIf="settings.secret32" class="col-md-12" appearance="outline">
-            <mat-label>{{ '2FA secret' | translate }}</mat-label>
-            <input type="text" matInput [(ngModel)]="settings.secret32">
-            <button mat-icon-button matSuffix (click)="clear2Fa()">
-                <mat-icon>clear</mat-icon>
-            </button>
-        </mat-form-field>
-    </mat-card-content>
-</mat-card>
+<app-simple>
+    <app-menu>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" (click)="saveData()">
+            <mat-icon color="primary">save</mat-icon>
+        </button>
+        <span>{{ 'Save' | translate }}</span>
+    </app-menu>
+    <app-content-view>
+        <mat-card class="col-md-12">
+            <mat-card-content>
+                <div class="row">
+                    <mat-checkbox [(ngModel)]="settings.autosave">{{ 'Auto save' | translate }}</mat-checkbox>
+                    <mat-radio-group *ngIf="settings.autosave" aria-label="Select an option"
+                                     [(ngModel)]="settings.saveInterval">
+                        <mat-radio-button value="5000">5 sec</mat-radio-button>
+                        <mat-radio-button value="10000">10 sec</mat-radio-button>
+                        <mat-radio-button value="30000">30 sec</mat-radio-button>
+                        <mat-radio-button value="60000">1 min</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <mat-form-field class="row" *ngIf="!settings.secret32">
+                    <button mat-icon-button (click)="initSettings()">
+                        <mat-icon color="primary">settings_cell</mat-icon>
+                    </button>
+                    <input type="text" matInput hidden>
+                    <span>{{ 'Create 2FA' | translate }}</span>
+                </mat-form-field>
+                <mat-form-field *ngIf="settings.secret32" class="col-md-12" appearance="outline">
+                    <mat-label>{{ '2FA secret' | translate }}</mat-label>
+                    <input type="text" matInput [(ngModel)]="settings.secret32">
+                    <button mat-icon-button matSuffix (click)="clear2Fa()">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+    </app-content-view>
+</app-simple>
+
