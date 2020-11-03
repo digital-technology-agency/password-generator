@@ -32,7 +32,6 @@ import {CertificateItemComponent} from './certificates/certificate-item/certific
 import {MatCardModule} from '@angular/material/card';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {AuthenticatorComponent} from './authenticator/authenticator.component';
 import {GoogleSettingsComponent} from './dialogs/autenticator/google-settings/google-settings.component';
 import { SettingViewComponent } from './setting-view/setting-view.component';
 import {MatRadioModule} from '@angular/material/radio';
@@ -71,7 +70,6 @@ const MATERIAL_MODULES = [
         CertificatesComponent,
         PasswordCardsComponent,
         CertificateItemComponent,
-        AuthenticatorComponent,
         SettingViewComponent,
     ],
     imports: [
