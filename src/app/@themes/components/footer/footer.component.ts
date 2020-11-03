@@ -15,9 +15,9 @@ export class FooterComponent implements OnInit {
 
     constructor(private electronService: ElectronService,
                 private translate: TranslateService) {
-      translate.setTranslation('en', Local.en());
-      translate.setTranslation('ru', Local.ru());
-      translate.setDefaultLang('en');
+        translate.setTranslation('en', Local.en());
+        translate.setTranslation('ru', Local.ru());
+        translate.setDefaultLang('en');
     }
 
     ngOnInit(): void {
@@ -28,6 +28,10 @@ export class FooterComponent implements OnInit {
         } else {
             console.log('Browser');
         }
+    }
+
+    feedBack() {
+        this.electron.shell.openExternal(`https://github.com/digital-technology-agency/password-generator/issues/new?assignees=&labels=&template=feature_request.md&title=`)
     }
 
     openActualVersion() {
