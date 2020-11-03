@@ -1,0 +1,17 @@
+<mat-toolbar class="example-header">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" (click)="initSettings()">
+        <mat-icon color="primary">settings_cell</mat-icon>
+    </button>
+    <span>{{ 'Create 2FA' | translate }}</span>
+</mat-toolbar>
+<mat-card *ngIf="exist2fa">
+    <mat-card-header>Validate 2FA</mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="col-md-12" appearance="fill">
+            <mat-label>{{ 'Token' | translate }}</mat-label>
+            <input style="font-size: 16px;" matInput [(ngModel)]="verifedNumber">
+            <mat-hint>verifed ({{verifed}})</mat-hint>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>

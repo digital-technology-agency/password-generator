@@ -9,6 +9,7 @@ export class ElectronService {
 
     electron: typeof Electron;
     crypto: any;
+    speake: any;
     electronTray: any;
     electronNotification: any;
     electronUpdater: any;
@@ -22,6 +23,7 @@ export class ElectronService {
         if (this.isElectron) {
             this.electron = window.require('electron');
             this.crypto = window.require('crypto');
+            this.speake = window.require('speakeasy');
             this.ipcRenderer = this.electron.ipcRenderer;
             this.webFrame = this.electron.webFrame;
             this.fs = window.require('fs');

@@ -18,6 +18,12 @@
                 </button>
                 <span>{{ 'Certificates' | translate }}</span>
             </mat-list-item>
+            <mat-list-item>
+                <button mat-icon-button class="example-icon" routerLink="/settings" (click)="drawer.toggle()">
+                    <mat-icon color="primary">lock_open</mat-icon>
+                </button>
+                <span>{{ 'Settings' | translate }}</span>
+            </mat-list-item>
         </mat-list>
     </mat-drawer>
     <div class="example-sidenav-content">
