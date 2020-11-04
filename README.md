@@ -25,6 +25,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Opening a web resource by clicking on a link
 * Popular installers
 * Tray app
+## New version notification
+![Settings view](./pic/new version status.png)
+
 ## Options view 
 ![Settings view](./pic/setting-view.png)
 

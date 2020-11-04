@@ -13,7 +13,9 @@
           "options": {
             "allowedCommonJsDependencies": [
               "qrcode",
-              "speakeasy"
+              "speakeasy",
+              "electron-updater",
+              "child_process"
             ],
             "outputPath": "dist",
             "index": "src/index.html",

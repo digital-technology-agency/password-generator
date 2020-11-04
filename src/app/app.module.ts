@@ -12,7 +12,7 @@ import {ClipboardModule} from 'ngx-clipboard';
 import {ToastrModule} from 'ngx-toastr';
 import {TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CertificatesComponent} from './certificates/certificates.component';
 import {PasswordCardsComponent} from './password-cards/password-cards.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -76,6 +76,7 @@ const MATERIAL_MODULES = [
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         NoopAnimationsModule,
         FormsModule,
