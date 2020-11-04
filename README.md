@@ -26,7 +26,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Popular installers
 * Tray app
 ## New version notification
-![Settings view](./pic/new version status.png)
+![Settings view](pic/new_version_status.png)
 
 ## Options view 
 ![Settings view](./pic/setting-view.png)
