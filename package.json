@@ -1,6 +1,6 @@
 {
   "name": "password-generator",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Password save and copied",
   "homepage": "https://dta.agency",
   "author": {
@@ -23,7 +23,7 @@
     "electron:serve-tsc": "tsc -p tsconfig.serve.json",
     "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron . --serve",
     "electron:local": "npm run build:prod && npx electron .",
-    "electron-local-build": "npm run build:prod && electron-builder build --linux --win --mac",
+    "electron-local-build": "npm run build:prod && electron-builder build --linux",
     "electron:linux": "npm run build:prod && electron-builder build --linux --publish always",
     "electron:win": "npm run build:prod && electron-builder build --win --publish always",
     "electron:mac": "npm run build:prod && electron-builder build --mac --publish always",
@@ -56,7 +56,8 @@
     "normalize.css": "^8.0.1",
     "web-animations-js": "^2.3.2",
     "electron-updater": "^4.3.5",
-    "electron-log": "^4.2.4"
+    "electron-log": "^4.2.4",
+    "speakeasy": "^2.0.0"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "10.0.1",
@@ -92,7 +93,6 @@
     "material-icons": "^0.3.1",
     "node-rsa": "^1.1.1",
     "node-forge": "^0.10.0",
-    "speakeasy": "^2.0.0",
     "crypto": "^1.0.1",
     "chai": "4.2.0",
     "conventional-changelog-cli": "2.1.0",

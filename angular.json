@@ -11,6 +11,10 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "qrcode",
+              "speakeasy"
+            ],
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
