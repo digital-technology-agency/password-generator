@@ -1,9 +1,8 @@
-import {app, BrowserWindow, screen, Tray} from 'electron';
+import {app, BrowserWindow, screen, Notification} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
 let win: BrowserWindow = null;
-let appTray: Tray = null;
 const args = process.argv.slice(1),
     serve = args.some(val => val === '--serve');
 
@@ -39,6 +38,7 @@ function createWindow(): BrowserWindow {
             slashes: true,
         }));
         win.setMenu(null);
+        /*win.webContents.openDevTools();*/
         /*appTray = new Tray(path.join(__dirname, 'dist/assets/logo.png'));*/
     }
     win.on('closed', () => {
@@ -52,10 +52,7 @@ function sendStatusToWindow(text) {
 }
 
 try {
-    app.on('ready', function () {
-        createWindow();
-    });
-
+    app.on('ready', () => setTimeout(createWindow, 400));
     // Quit when all windows are closed.
     app.on('window-all-closed', () => {
         // On OS X it is common for applications and their menu bar
@@ -73,6 +70,9 @@ try {
         }
     });
 } catch (e) {
-    // Catch Error
-    // throw e;
+    throw e;
+/*    new Notification({
+        title: "Error",
+        body: e,
+    }).show()*/
 }

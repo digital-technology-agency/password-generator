@@ -17,8 +17,8 @@ const routes: Routes = [
         path: 'settings',
         component: SettingViewComponent,
     },
-    {path: '', redirectTo: 'certificates', pathMatch: 'full'},
-    {path: '**', redirectTo: 'certificates'},
+    {path: '', redirectTo: 'settings', pathMatch: 'full'},
+    {path: '**', redirectTo: 'settings'},
 ];
 
 @NgModule({
