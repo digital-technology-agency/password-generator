@@ -52,6 +52,10 @@ export class FooterComponent implements OnInit, OnDestroy {
         this.electron.shell.openExternal(`https://github.com/digital-technology-agency/password-generator/issues/new?assignees=&labels=&template=feature_request.md&title=`)
     }
 
+    wikiOnline() {
+        this.electron.shell.openExternal(`https://github.com/digital-technology-agency/password-generator/wiki`)
+    }
+
     openActualVersion() {
         this.electron.shell.openExternal(this.releaseUrl);
     }
