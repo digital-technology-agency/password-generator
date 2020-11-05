@@ -3,13 +3,8 @@ on:
   push:
     branches: [ master ]
 jobs:
-  release:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-
+  linux:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v1
@@ -21,31 +16,47 @@ jobs:
 
       - name: Install Snapcraft
         uses: samuelmeuli/action-snapcraft@v1
-        if: startsWith(matrix.os, 'ubuntu')
         with:
           snapcraft_token: ${{ secrets.snapcraft_token }}
 
-      - name: Linux
+      - name: Linux build
         uses: samuelmeuli/action-electron-builder@v1
-        if: startsWith(matrix.os, 'ubuntu')
         with:
           build_script_name: "electron:linux"
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/') }}
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Check out Git repository
+          uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Macos
+          uses: samuelmeuli/action-electron-builder@v1
+          with:
+            build_script_name: "electron:mac"
+            github_token: ${{ secrets.github_token }}
+            release: ${{ startsWith(github.ref, 'refs/tags/') }}
+  windows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+          uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
 
       - name: Windows
         uses: samuelmeuli/action-electron-builder@v1
-        if: startsWith(matrix.os, 'windows')
         with:
           build_script_name: "electron:win"
-          github_token: ${{ secrets.github_token }}
-          release: ${{ startsWith(github.ref, 'refs/tags/') }}
-
-      - name: Macos
-        uses: samuelmeuli/action-electron-builder@v1
-        if: startsWith(matrix.os, 'macos')
-        with:
-          build_script_name: "electron:mac"
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/') }}
 
