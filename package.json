@@ -1,7 +1,7 @@
 {
   "name": "password-generator",
-  "version": "1.0.13",
-  "description": "Password save and copied",
+  "version": "1.0.14",
+  "description": "Password manager. Create, save and copied",
   "homepage": "https://dta.agency",
   "author": {
     "email": "admin@digital-technology.agency",
