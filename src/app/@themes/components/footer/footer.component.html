@@ -11,6 +11,13 @@
             <option value="ru">RU</option>
         </select>
     </div>
-    <a href="#" (click)="openActualVersion()" matTooltip="{{ 'Show actual version' | translate }}"
+    <a *ngIf="!updateNewVersion" href="#" (click)="openActualVersion()"
+       matTooltip="{{ 'Show actual version' | translate }}"
        matTooltipPosition="above">{{footerText}}</a>
+    <button *ngIf="updateNewVersion" mat-icon-button class="example-icon" (click)="openActualVersion()"
+            matTooltip="{{ 'Download new version...' | translate }}"
+            matTooltipPosition="above">
+        <mat-icon class="dowload-icon-warning" color="accent">get_app</mat-icon>
+    </button>
+    <span class="dowload-icon-warning" *ngIf="updateNewVersion">{{ 'New release' | translate }}</span>
 </mat-toolbar>
