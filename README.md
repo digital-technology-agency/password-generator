@@ -43,6 +43,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Downloads
-[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.13/password-generator-installer-1.0.13.exe)
-[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.13/password-generator-1.0.13.AppImage)
-[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.13/password-generator-1.0.13-mac.tar.gz)
+[![Windows app](./pic/win-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.15/password-generator-installer-1.0.15.exe)
+[![Linux app](./pic/linux-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.15/password-generator-1.0.15.AppImage)
+[![Mac app](./pic/mac-dwnl.png)](https://github.com/digital-technology-agency/password-generator/releases/download/1.0.15/password-generator-1.0.15-mac.tar.gz)

@@ -1,4 +1,10 @@
 <mat-toolbar class="example-footer fixed-bottom footer">
+    <button mat-icon-button class="example-icon" (click)="wikiOnline()"
+            matTooltip="{{ 'Wiki online' | translate }}"
+            matTooltipPosition="above">
+        <mat-icon color="primary">help_outline</mat-icon>
+    </button>
+    <span>{{ 'Wiki online' | translate }}</span>
     <button mat-icon-button class="example-icon" (click)="feedBack()"
             matTooltip="{{ 'Write to developer' | translate }}"
             matTooltipPosition="above">
